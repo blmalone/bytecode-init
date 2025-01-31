@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {TightPacking} from "../src/TightPacking.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+contract TightPackingScript is Script {
+    TightPacking public tightPacking;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        tightPacking = new TightPacking(1, 2, 3);
 
         vm.stopBroadcast();
     }
